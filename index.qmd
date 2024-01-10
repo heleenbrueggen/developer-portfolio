@@ -1,5 +1,0 @@
----
-title: "Developer portfolio Heleen Brüggen"
----
-
-Hi! Welcome to my website. You can navigate through the different pages using the menu at the top. There, you can find information about myself, my CV, projects and how to contact me. 
