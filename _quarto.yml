@@ -5,9 +5,8 @@ website:
   title: "Heleen Brüggen"
   navbar:
     left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+      - href: about.qmd
+        text: About
       - href: curriculum.qmd
       - projects.qmd
       - text: Contact
