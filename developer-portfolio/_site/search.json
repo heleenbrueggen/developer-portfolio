@@ -11,6 +11,41 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "Hi! My name is Heleen Brüggen"
+    "text": "Heleen Brüggen is a second year Master student at Utrecht University studying Methodology and Statistics for the Behavioural, Biomedical and Social Sciences. She is currently working on her Master thesis on the topic of implementing Bayesian Additive Regression Trees (BART) models in multilevel multiple imputation though chained equations.\nNext to her universty studies, Heleen also currently studies classical violin with Carla Leurs at the conservatory of Utrecht at the Hogeschool voor de Kunsten Utrecht (HKU). She is currently in her third year of her Bachelor of Music degree and will graduate next year.\nIn her free time, Heleen enjoys sight-reading chamber music, drawing, reading, gaming and photography."
+  },
+  {
+    "objectID": "curriculum.html",
+    "href": "curriculum.html",
+    "title": "Curiculum Vitae",
+    "section": "",
+    "text": "CV"
+  },
+  {
+    "objectID": "curriculum.html#education",
+    "href": "curriculum.html#education",
+    "title": "Curiculum Vitae",
+    "section": "",
+    "text": "Sep 2012 - Jun 2018  Sep 2021 - Present  Sep 2022 - Present"
+  },
+  {
+    "objectID": "curriculum.html#section",
+    "href": "curriculum.html#section",
+    "title": "Curiculum Vitae",
+    "section": "",
+    "text": "VWO - Gymnasium  Classical violin  Methodology and Statistics for the Behavioural, Biomedical and Social Sciences"
+  },
+  {
+    "objectID": "curriculum.html#vwo---gymnasium",
+    "href": "curriculum.html#vwo---gymnasium",
+    "title": "Curiculum Vitae",
+    "section": "",
+    "text": "Classical violin  Methodology and Statistics for the Behavioural, Biomedical and Social Sciences"
+  },
+  {
+    "objectID": "curriculum.html#section-1",
+    "href": "curriculum.html#section-1",
+    "title": "Curiculum Vitae",
+    "section": "",
+    "text": "Stedelijk Gymnasium Haarlem  Utrecht Conservatory  Utrecht University"
   }
 ]

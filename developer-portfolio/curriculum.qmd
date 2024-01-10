@@ -1,3 +1,7 @@
 ---
-title: "CV"
+title: "Curiculum Vitae"
 ---
+
+::: column-page
+![](images/Heleen-Brüggen.png)
+:::
