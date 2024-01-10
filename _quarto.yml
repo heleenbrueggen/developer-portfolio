@@ -8,8 +8,7 @@ website:
       - href: index.qmd
         text: Home
       - about.qmd
-      - href: images/Heleen-Brüggen.pdf
-        text: Curriculum Vitae
+      - href: curriculum.qmd
       - projects.qmd
       - text: Contact
         menu: 
