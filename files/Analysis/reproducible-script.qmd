@@ -1,9 +1,9 @@
 ---
-title: "Reproducible Research Project"
-bibliography: files/Analysis/references.bib
+title: "My Reproducible Script"
+author: Heleen Brüggen
+format: pdf
+bibliography: references.bib
 ---
-
-For the course *Markup languages and Reproducible Research* we have to create a [reproducible research project](files/reproducible-script.zip). The following is that file. 
 
 # Introduction 
 This document reproduces the findings from the article by Boulesteix, Groenwold, Abrahamowicz et al. [-@boulesteix2020].
@@ -23,14 +23,14 @@ library(mice)
 library(tidyverse)
 
 # Setting the working directory
-# setwd('')
+setwd('/Users/Heleen/Desktop/Universiteit Utrecht/Methodology & Statistics for the Behavioural, Biomedical and Social Sciences/Year 2/Semester 1/Markup Languages and Reproducible Programming/markup2023/Heleen Brüggen/Wk 4/Exercise 2')
 
 # Loading the data
-d1 <- Hmisc::sasxport.get("files/Analysis/Data/DEMO_I.XPT")
-d2 <- Hmisc::sasxport.get("files/Analysis/Data/BPX_I.XPT")
-d3 <- Hmisc::sasxport.get("files/Analysis/Data/BMX_I.XPT")
-d4 <- Hmisc::sasxport.get("files/Analysis/Data/GHB_I.XPT")
-d5 <- Hmisc::sasxport.get("files/Analysis/Data/TCHOL_I.XPT")
+d1 <- Hmisc::sasxport.get("Data/DEMO_I.XPT")
+d2 <- Hmisc::sasxport.get("Data/BPX_I.XPT")
+d3 <- Hmisc::sasxport.get("Data/BMX_I.XPT")
+d4 <- Hmisc::sasxport.get("Data/GHB_I.XPT")
+d5 <- Hmisc::sasxport.get("Data/TCHOL_I.XPT")
 
 # Subsetting data
 d1.t <- subset(d1,select=c("seqn","riagendr","ridageyr"))
