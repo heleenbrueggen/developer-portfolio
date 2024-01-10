@@ -8,7 +8,14 @@ website:
       - href: about.qmd
         text: About
       - href: curriculum.qmd
-      - projects.qmd
+      - text: Projects
+        menu:
+          - text: Master Thesis
+            href: thesis.qmd
+          - text: Reproducible Research Project
+            href: rep.qmd
+          - text: R - package
+            href: package.qmd
       - text: Contact
         menu: 
           - text: Github
