@@ -2,4 +2,7 @@
 title: "Master Thesis"
 ---
 
-Currently, Heleen is working on her master thesis for the program Methodology and Statistics for the Behavioural, Biomedical and Social Sciences. The title of the thesis is:  
+Currently, Heleen is working on her master thesis for the program Methodology and Statistics for the Behavioural, Biomedical and Social Sciences. The title of the thesis is *Multilevel Multivariate Imputation by Chained Equations through
+Bayesian Additive Regression Trees* and is supervised by Thom Volker, Hanne Obermand and Gerko Vink from Utrecht University. It is expected to be finished in May 2024. 
+
+For now, you can find the [research report](files/Research_Report_Heleen_Brueggen.pdf) for this thesis project and associated [LateX file](files/Research_Report_Heleen_Brueggen.tex) here.
