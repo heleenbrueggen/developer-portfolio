@@ -3,7 +3,6 @@ title: "Reproducible Research Project"
 bibliography: files/Analysis/references.bib
 engine: knitr::rmarkdown
 ---
-
 For the course *Markup languages and Reproducible Research* we have to create a [reproducible research project](files/reproducible-script.zip). The following is that file. 
 
 # Introduction 
@@ -25,6 +24,7 @@ library(tidyverse)
 
 # Setting the working directory
 # setwd('')
+knitr::opts_knit$set(root.dir = rprojroot::find_rstudio_root_file())
 
 # Loading the data
 d1 <- Hmisc::sasxport.get("files/Analysis/Data/DEMO_I.XPT")
