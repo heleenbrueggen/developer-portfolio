@@ -1,5 +1,0 @@
----
-title: "My Reproducible Script"
----
-
-For the course *Markup languages and Reproducible Research* we had to create a [reproducible research project](https://github.com/heleenbrueggen/reproducible-repository). This Github repository contains the file that is fully reproducible when running the script and is licensed.

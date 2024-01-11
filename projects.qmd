@@ -1,0 +1,24 @@
+---
+title: "Projects"
+---
+
+# Master thesis 
+
+Currently, Heleen is working on her master thesis for the program Methodology and Statistics for the Behavioural, Biomedical and Social Sciences. The title of the thesis is *Multilevel Multivariate Imputation by Chained Equations through
+Bayesian Additive Regression Trees* and is supervised by Thom Volker, Hanne Obermand and Gerko Vink from Utrecht University. It is expected to be finished in May 2024. 
+
+For now, you can find the [research report](files/Research_Report_Heleen_Brueggen.pdf) for this thesis project and associated [LateX file](files/Research_Report_Heleen_Brueggen.zip) here.
+
+# Reproducible Research Project
+
+For the course *Markup languages and Reproducible Research* we had to create a [reproducible research project](https://github.com/heleenbrueggen/reproducible-repository). This Github repository contains the file that is fully reproducible when running the script and is licensed.
+
+# R-package
+
+Again, for the course *Markup languages and Reproducible Research* Heleen created simple R-package which is availabele on Github. The package is called `datageneration` and can be installed using the following code: `devtools::install_github("heleenbrueggen/datageneration")`
+
+The package includes versioning, a license, tests, and a reference with DOI. 
+
+The package generates a simple data set containing normally distributed variables with a specified mean and standard deviation. From those variables a dependent variables `y` is created assuming a linear relationship between the variables. The user can specify the number of variables, the mean and standard deviation of the variables, and the amount of observations.
+
+The github repository can be found be following this [link](https:://github.com/heleenbrueggen/datageneration)
