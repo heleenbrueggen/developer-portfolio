@@ -1,6 +1,5 @@
 ---
 title: "My Reproducible Script"
-author: "Heleen Brüggen"
 ---
 
 For the course *Markup languages and Reproducible Research* we have to create a [reproducible research project](files/reproducible-script.zip). 
