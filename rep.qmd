@@ -22,6 +22,7 @@ First, the data was subsetted and merged into one data set. The following code d
 library(Hmisc)
 library(mice)
 library(tidyverse)
+library(rmarkdown)
 
 # Setting the working directory
 # setwd('')
