@@ -1,5 +1,12 @@
 [
   {
+    "objectID": "package.html",
+    "href": "package.html",
+    "title": "R-package",
+    "section": "",
+    "text": "Again, for the course Markup languages and Reproducible Research Heleen created simple R-package which is availabele on Github. The package is called datageneration and can be installed using the following code: devtools::install_github(\"heleenbrueggen/datageneration\")\nThe package includes versioning, a license, tests, and a reference with DOI.\nThe package generates a simple data set containing normally distributed variables with a specified mean and standard deviation. From those variables a dependent variables y is created assuming a linear relationship between the variables. The user can specify the number of variables, the mean and standard deviation of the variables, and the amount of observations.\nThe github repository can be found be following this link"
+  },
+  {
     "objectID": "rep.html",
     "href": "rep.html",
     "title": "My Reproducible Script",
