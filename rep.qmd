@@ -1,8 +1,9 @@
 ---
-title: "Reproducible Research Project"
+title: "My Reproducible Script"
+author: "Heleen Brüggen"
 bibliography: files/Analysis/references.bib
-engine: knitr::rmarkdown
 ---
+
 For the course *Markup languages and Reproducible Research* we have to create a [reproducible research project](files/reproducible-script.zip). The following is that file. 
 
 # Introduction 
