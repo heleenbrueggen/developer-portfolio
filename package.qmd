@@ -2,14 +2,7 @@
 title: "R-package"
 ---
 
-Again, for the course *Markup languages and Reproducible Research* Heleen created simple R-package which is availabele on Github. The package is called `datageneration` and can be installed using the following code:
-
-```{r}
-#| echo: true
-#| eval: false
-#| label: "installing package"
-devtools::install_github("heleenbrueggen/datageneration")
-```
+Again, for the course *Markup languages and Reproducible Research* Heleen created simple R-package which is availabele on Github. The package is called `datageneration` and can be installed using the following code: `devtools::install_github("heleenbrueggen/datageneration")`
 
 The package includes versioning, a license, tests, and a reference with DOI. 
 
