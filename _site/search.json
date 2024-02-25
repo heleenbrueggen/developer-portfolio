@@ -1,65 +1,16 @@
 [
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "About",
-    "section": "",
-    "text": "Heleen Brüggen is a second year Master student at Utrecht University studying Methodology and Statistics for the Behavioural, Biomedical and Social Sciences. She is currently working on her Master thesis on the topic of implementing Bayesian Additive Regression Trees (BART) models in multilevel multiple imputation though chained equations.\nNext to her universty studies, Heleen also currently studies classical violin with Carla Leurs at the conservatory of Utrecht at the Hogeschool voor de Kunsten Utrecht (HKU). She is currently in her third year of her Bachelor of Music degree and will graduate next year.\nIn her free time, Heleen enjoys sight-reading chamber music, drawing, reading, gaming and photography."
-  },
-  {
-    "objectID": "thesis.html",
-    "href": "thesis.html",
-    "title": "Projects",
-    "section": "",
-    "text": "Master thesis\nCurrently, Heleen is working on her master thesis for the program Methodology and Statistics for the Behavioural, Biomedical and Social Sciences. The title of the thesis is Multilevel Multivariate Imputation by Chained Equations through Bayesian Additive Regression Trees and is supervised by Thom Volker, Hanne Obermand and Gerko Vink from Utrecht University. It is expected to be finished in May 2024.\nFor now, you can find the research report for this thesis project and associated LateX file here.\n\n\nReproducible Research Project\nFor the course Markup languages and Reproducible Research we had to create a reproducible research project. This Github repository contains the file that is fully reproducible when running the script and is licensed.\n\n\nR-package\nAgain, for the course Markup languages and Reproducible Research Heleen created simple R-package which is availabele on Github. The package is called datageneration and can be installed using the following code: devtools::install_github(\"heleenbrueggen/datageneration\")\nThe package includes versioning, a license, tests, and a reference with DOI.\nThe package generates a simple data set containing normally distributed variables with a specified mean and standard deviation. From those variables a dependent variables y is created assuming a linear relationship between the variables. The user can specify the number of variables, the mean and standard deviation of the variables, and the amount of observations.\nThe github repository can be found be following this link"
-  },
-  {
-    "objectID": "rep.html",
-    "href": "rep.html",
-    "title": "My Reproducible Script",
-    "section": "",
-    "text": "For the course Markup languages and Reproducible Research we had to create a reproducible research project. This Github repository contains the file that is fully reproducible when running the script and is licensed."
-  },
-  {
-    "objectID": "rep.html#renaming-variables",
-    "href": "rep.html#renaming-variables",
-    "title": "My Reproducible Script",
-    "section": "Renaming variables",
-    "text": "Renaming variables\nFor readability and ease, the following code renames the variables ridageyr, riagendr, bpxsy1, bmxbmi, lbxgh and lbdtcsi to age, sex, bp, bmi, HbA1C and chol respectively. Respondents below 18 were coded as missing.\n\nd$age &lt;- d$ridageyr # ridageyr --&gt; age\nd$sex &lt;- d$riagendr # riagendr --&gt; sex\nd$bp &lt;- d$bpxsy1 # bpxsy1 --&gt; bp\nd$bmi &lt;- d$bmxbmi # bmxbmi --&gt; bmi\nd$HbA1C &lt;- d$lbxgh # lbxgh --&gt; HbA1C\nd$chol &lt;- d$lbdtcsi # lbdtcsi --&gt; chol\nd$age[d$age&lt;18] &lt;- NA # coding respondents below 18 as missing"
-  },
-  {
-    "objectID": "rep.html#selecting-complete-cases",
-    "href": "rep.html#selecting-complete-cases",
-    "title": "My Reproducible Script",
-    "section": "Selecting complete cases",
-    "text": "Selecting complete cases\nThe data was subsetted to only include complete cases and the variables age, sex, bmi HbA1C and bp.\n\ndc &lt;- cc(subset(d,select=c(\"age\",\"sex\",\"bmi\",\"HbA1C\",\"bp\")))"
-  },
-  {
-    "objectID": "rep.html#simulation-of-measurement-error",
-    "href": "rep.html#simulation-of-measurement-error",
-    "title": "My Reproducible Script",
-    "section": "Simulation of measurement error",
-    "text": "Simulation of measurement error\nNext, a simulation study was performed to investigate to possible measurement error associated with the linear models. First, the original recordings of the data were assumed to be measured without error.\n\nref &lt;- lm(bp ~ HbA1C + bmi + age + as.factor(sex), data=dc)$coef[2]\nn.sim &lt;- 1e3\nperc.me.exp &lt;- seq(0,.5,.1)\nperc.me.conf&lt;- seq(0,.5,.1)\nscenarios &lt;- expand.grid(perc.me.exp,perc.me.conf)\nvar.exp &lt;- var(dc$HbA1C)\nvar.conf &lt;- var(dc$bmi)\nn &lt;- dim(dc)[1]\nbeta.hat &lt;- matrix(ncol=dim(scenarios)[1], nrow=n.sim)\nfor (k in 1:n.sim){\n  print(k)\n  set.seed(k)\n  for (i in 1:dim(scenarios)[1]){\n    var.me.exp &lt;- var.exp*scenarios[i,1]/(1-scenarios[i,1])\n    var.me.conf &lt;- var.conf*scenarios[i,2]/(1-scenarios[i,2])\n    dc$HbA1C.me &lt;- dc$HbA1C + rnorm(dim(dc)[1], 0, sqrt(var.me.exp) )\n    dc$bmi.me &lt;- dc$bmi + rnorm(dim(dc)[1], 0, sqrt(var.me.conf) )\n    beta.hat[k,i] &lt;- lm(bp ~ HbA1C.me + age + bmi.me + as.factor(sex), data=dc)$coef[2]\n  }}"
-  },
-  {
-    "objectID": "rep.html#results",
-    "href": "rep.html#results",
-    "title": "My Reproducible Script",
-    "section": "Results",
-    "text": "Results\nThe following code prints the results of the simulation study.\n\ntot.mat &lt;- cbind(100*scenarios,apply(beta.hat,2,mean))\ncolnames(tot.mat) &lt;- c(\"me.exp\",\"me.conf\",\"estimate\")\nFIGURE &lt;- ggplot(tot.mat, aes(me.exp, me.conf)) +\n  geom_tile(color=\"white\",aes(fill = estimate)) +\n  geom_text(aes(label = round(estimate, 2))) +\n  scale_fill_gradient2(low=\"#D55E00\",mid=\"white\",high = \"#56B4E9\", midpoint=ref) +\n  labs(x=paste(\"% of total variance of HbA1c due to measurement error\"),\n       y=paste(\"% of total variance of BMI due to measurement error\")) +\n  coord_equal()+\n  scale_y_continuous(breaks=unique(tot.mat[,1]))+\n  scale_x_continuous(breaks=unique(tot.mat[,1]))+\n  theme(panel.background = element_rect(fill='white', colour='grey'),\n        plot.title=element_text(hjust=0),\n        axis.ticks=element_blank(),\n        axis.title=element_text(size=12),\n        axis.text=element_text(size=10),\n        legend.title=element_text(size=12),\n        legend.text=element_text(size=10))\nFIGURE\n\n\n\n\n\n\n\n# savePlot(\"Figure_STRATOS.tif\", type=\"tif\")"
-  },
-  {
-    "objectID": "package.html",
-    "href": "package.html",
-    "title": "R-package",
-    "section": "",
-    "text": "Again, for the course Markup languages and Reproducible Research Heleen created simple R-package which is availabele on Github. The package is called datageneration and can be installed using the following code: r devtools::install_github(\"heleenbrueggen/datageneration\")\nThe package includes versioning, a license, tests, and a reference with DOI.\nThe package generates a simple data set containing normally distributed variables with a specified mean and standard deviation. From those variables a dependent variables y is created assuming a linear relationship between the variables. The user can specify the number of variables, the mean and standard deviation of the variables, and the amount of observations.\nThe github repository can be found be following this link"
-  },
-  {
     "objectID": "projects.html",
     "href": "projects.html",
     "title": "Projects",
     "section": "",
     "text": "Master thesis\nCurrently, Heleen is working on her master thesis for the program Methodology and Statistics for the Behavioural, Biomedical and Social Sciences. The title of the thesis is Multilevel Multivariate Imputation by Chained Equations through Bayesian Additive Regression Trees and is supervised by Thom Volker, Hanne Oberman and Gerko Vink from Utrecht University. It is expected to be finished in May 2024.\nFor now, you can find the research report for this thesis project and associated LateX file here.\n\n\nReproducible Research Project\nFor the course Markup languages and Reproducible Research Heleen created a reproducible research project. You can download a local copy of the repository here. This Github repository contains the file that is fully reproducible when running the script and is licensed.\n\n\nR-package\nAgain, for the course Markup languages and Reproducible Research Heleen created simple R-package which is availabele on Github. The package is called datageneration and can be installed using the following code: devtools::install_github(\"heleenbrueggen/datageneration\")\nThe package includes versioning, a license, tests, and a reference with DOI that can be found in the Github repository.\nThe package generates a simple data set containing normally distributed variables with a specified mean and standard deviation. From those variables a dependent variables y is created assuming a linear relationship between the variables. The user can specify the number of variables, the mean and standard deviation of the variables, and the amount of observations."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "About",
+    "section": "",
+    "text": "Heleen Brüggen is a second year Master student at Utrecht University studying Methodology and Statistics for the Behavioural, Biomedical and Social Sciences. She is currently working on her Master thesis on the topic of implementing Bayesian Additive Regression Trees (BART) models in multilevel multiple imputation though chained equations.\nNext to her universty studies, Heleen also currently studies classical violin with Carla Leurs at the conservatory of Utrecht at the Hogeschool voor de Kunsten Utrecht (HKU). She is currently in her third year of her Bachelor of Music degree and will graduate next year.\nIn her free time, Heleen enjoys sight-reading chamber music, drawing, reading, gaming and photography."
   }
 ]
